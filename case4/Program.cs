@@ -23,7 +23,17 @@ void FillArray(int[] newArray)
         newArray[i] = new Random().Next(0, 201);
 }
 
+void PrintArray(int[] newArr)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < newArr.Length -1; i++)
+        Console.Write(newArr[i] + ", ");
+    Console.Write(newArr[newArr.Length -1] + " ]");
+    Console.WriteLine();
+}
+
 int[] newArray = new int [123];
 FillArray(newArray);
 int res = FindNum(newArray);
-Console.WriteLine(res);
+PrintArray(newArray);
+Console.WriteLine($"{res} - элементов массива, значения которых лежат в отрезке [10,99].");
