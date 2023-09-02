@@ -22,12 +22,13 @@ void Trade(int[] newArray){
     }
 }
 
-void PrintArray(int[] newArray){
-    for (int i = 0; i < newArray.Length; i++)
-    {
-        System.Console.Write(newArray[i] + " ");
-    }
-    System.Console.WriteLine();
+void PrintArray(int[] newArray)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < newArray.Length -1; i++)
+        Console.Write(newArray[i] + ", ");
+    Console.Write(newArray[newArray.Length -1] + " ]");
+    Console.WriteLine();
 }
 
 int size = InputNum("Введите размер массива: ");
