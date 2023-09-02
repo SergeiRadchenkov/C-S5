@@ -7,8 +7,8 @@
 
 int InputNum (string message)
 {
-    Console.WriteLine(message);
-    return int.Parse(Console.WriteLine()!);
+    Console.Write(message);
+    return int.Parse(Console.ReadLine()!);
 }
 
 int[] CreateArray(int size)
@@ -16,21 +16,28 @@ int[] CreateArray(int size)
     return new int[size];
 }
 
-void FillArray(int[] arr, int minValue, int maxValue)
+/* void FillArray(int[] arr, int minValue, int maxValue)
 {
     Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
         arr[i] = rnd.Next(minValue, maxValue +1);
+} */
+
+void FillArray(int[] arr)
+{
+    Random rnd = new Random();
+    for (int i = 0; i < arr.Length; i++)
+        arr[i] = rnd.Next(-9, 10);
 }
 
 void PrintArray(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
         Console.Write(arr[i] + " ");
-    Console.Write();
+    Console.WriteLine();
 }
 
-void SumPostElements(int[] arr)
+void SumPosNegElements(int[] arr)
 {
     int sumPos = 0;
     int sumNeg = 0;
@@ -42,7 +49,16 @@ void SumPostElements(int[] arr)
             sumNeg += arr[i];
     }
     Console.WriteLine($"Сумма положительных элементов равна {sumPos}");
-    Console.WriteLine($"Сумма положительных элементов равна {sumNeg}");
+    Console.WriteLine($"Сумма отрицательных элементов равна {sumNeg}");
 }
 
 int size = InputNum("Введите размер массива: ");
+// int min = InputNum("Введите минимальное значение элемента:");
+// int max = InputNum("Введите максимальное значение элемента:");
+
+int[] myArray = CreateArray(size);
+// FillArray(myArray, min, max);
+FillArray(myArray);
+
+PrintArray(myArray);
+SumPosNegElements(myArray);
