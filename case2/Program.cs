@@ -4,7 +4,7 @@
 [-4, -8, 8, 2] -> [4, 8, -8, -2] */
 
 int InputNum(string message){
-    System.Console.WriteLine(message);
+    System.Console.Write(message);
     return int.Parse(Console.ReadLine()!);
 }
 
