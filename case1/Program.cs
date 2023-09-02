@@ -5,3 +5,44 @@
 положительных чисел равна 29, сумма отрицательных равна
 -20. */
 
+int InputNum (string message)
+{
+    Console.WriteLine(message);
+    return int.Parse(Console.WriteLine()!);
+}
+
+int[] CreateArray(int size)
+{
+    return new int[size];
+}
+
+void FillArray(int[] arr, int minValue, int maxValue)
+{
+    Random rnd = new Random();
+    for (int i = 0; i < arr.Length; i++)
+        arr[i] = rnd.Next(minValue, maxValue +1);
+}
+
+void PrintArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+        Console.Write(arr[i] + " ");
+    Console.Write();
+}
+
+void SumPostElements(int[] arr)
+{
+    int sumPos = 0;
+    int sumNeg = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > 0)
+            sumPos += arr[i];
+        else 
+            sumNeg += arr[i];
+    }
+    Console.WriteLine($"Сумма положительных элементов равна {sumPos}");
+    Console.WriteLine($"Сумма положительных элементов равна {sumNeg}");
+}
+
+int size = InputNum("Введите размер массива: ");
