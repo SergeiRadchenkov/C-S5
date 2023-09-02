@@ -5,7 +5,7 @@
 
 int InputNum(string message)
 {
-    System.Console.Write(message);
+    Console.Write(message);
     return int.Parse(Console.ReadLine()!);
 }
 
@@ -30,21 +30,22 @@ bool FindNum(int[] array, int number)
 
 void PrintArray(int[] newArray)
 {
-    for (int i = 0; i < newArray.Length; i++)
-    {
-        System.Console.Write(newArray[i] + " ");
-    }
-    System.Console.WriteLine();
+    Console.Write("[ ");
+    for (int i = 0; i < newArray.Length -1; i++)
+        Console.Write(newArray[i] + ", ");
+    Console.Write(newArray[newArray.Length -1] + " ]");
+    Console.WriteLine();
 }
 int size = InputNum("Введите размер массива: ");
 int[] newArray = new int [size];
 FillArray(newArray);
-PrintArray(newArray);
+// PrintArray(newArray);
 int num = InputNum("Введите число: ");
+PrintArray(newArray);
 bool answer = FindNum(newArray, num);
 // if (answer) 
 //     Console.WriteLine("Данное число есть в массиве");
 // else 
 //     Console.WriteLine("Данного числа нет в массиве");
 
-Console.WriteLine(answer == true?"Да":"Нет");
+Console.WriteLine(answer == true?"Да, данное число есть в массиве.":"Нет, данного числа нет в массиве.");
